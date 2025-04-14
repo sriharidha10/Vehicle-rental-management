@@ -1,0 +1,330 @@
+.admin-dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.admin-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.admin-logout-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-logout-button:hover {
+  background-color: #c82333;
+}
+
+.admin-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.admin-success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.tab-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.add-vehicle-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s;
+}
+
+.add-vehicle-button:hover {
+  background-color: #218838;
+}
+
+.add-vehicle-form {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.submit-vehicle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.submit-vehicle-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.submit-vehicle-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.vehicles-grid,
+.bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.vehicle-card,
+.booking-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+}
+
+.vehicle-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.vehicle-details,
+.booking-details {
+  padding: 1.5rem;
+}
+
+.vehicle-details h3,
+.booking-details h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.vehicle-details p,
+.booking-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.remove-vehicle-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.remove-vehicle-button:hover {
+  background-color: #c82333;
+}
+
+.admin-loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 1rem;
+  }
+
+  .vehicles-grid,
+  .bookings-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .add-vehicle-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .admin-tabs {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+  }
+}
+
+.booking-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.booking-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.confirm-booking-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.confirm-booking-button:hover {
+  background-color: #45a049;
+}
+
+.cancel-booking-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel-booking-button:hover {
+  background-color: #da190b;
+}
+
+.complete-booking-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.complete-booking-button:hover {
+  background-color: #1976D2;
+}
+
+.booking-status {
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.booking-status.pending {
+  background-color: #FFF3CD;
+  color: #856404;
+}
+
+.booking-status.confirmed {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.booking-status.completed {
+  background-color: #CCE5FF;
+  color: #004085;
+}
+
+.booking-status.cancelled {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.booking-details h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.booking-details p {
+  margin: 8px 0;
+  color: #666;
+}
+
+.booking-details strong {
+  color: #333;
+}
